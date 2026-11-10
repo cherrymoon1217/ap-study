@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f4f4ef">
+  <title>AP Tutor — 応用情報の個別指導</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="/"><span class="brand-mark">A</span><span>AP Tutor<small>応用情報の個別指導</small></span></a>
+    <div class="top-actions"><span id="connection" class="connection"><i></i> Web接続中</span><span id="agent-connection" class="agent-connection">撮影連携を確認中</span><button id="mode-toggle" class="mode-toggle"><span class="toggle-dot"></span><span id="mode-label">学習モード ON</span></button></div>
+  </header>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="sidebar-head"><div><p class="eyebrow">YOUR STUDY DESK</p><h2>学習履歴</h2></div><button id="new-question" class="icon-button" aria-label="新しい問題">＋</button></div>
+      <p class="sidebar-note">撮影した問題がここに追加されます。</p>
+      <div id="history" class="history-list"></div>
+      <div class="sidebar-footer"><span class="privacy-icon">◉</span><span>撮影画像は自動転送後に削除<br><small>問題情報と会話のみ保存</small></span></div>
+    </aside>
+    <main class="main-panel">
+      <section id="empty-state" class="empty-state">
+        <div class="hero-orbit"><div class="hero-card"><span class="spark">✳</span><span class="hero-lines"></span><span class="hero-lines short"></span><span class="hero-check">✓</span></div></div>
+        <p class="eyebrow">YOUR PERSONAL AP TUTOR</p><h1>問題を解く力を、<br><em>一歩ずつ。</em></h1>
+        <p class="empty-copy">Fn + F6でスクリーンショットを撮ると、<br>保存操作なしでここに表示されます。</p>
+        <div class="capture-hint"><span class="hint-icon">↗</span><div><strong>Fn + F6 を押して問題を撮影</strong><small>画像クリップボードから直接Webへ転送します。</small></div><span class="shortcut-chip">Fn + F6</span></div>
+      </section>
+      <section id="study-view" class="study-view hidden">
+        <div class="study-heading"><div><p class="eyebrow">STUDY SESSION <span id="subject-label"></span></p><h1>問題を一緒に読み解く</h1></div><div class="session-actions"><span class="keyboard-hint">Fn + F6 で次の問題</span><button id="delete-question" class="icon-button danger" title="この問題を削除">⌫</button></div></div>
+        <div class="question-layout">
+          <section class="question-card"><div class="card-title"><span class="step-number">01</span><div><strong>撮影した問題</strong><small id="question-date"></small></div><select id="subject-select" aria-label="科目"><option value="">科目を設定</option><option value="A">科目A</option><option value="B">科目B</option></select></div><div class="image-frame"><img id="question-image" alt="撮影した問題" hidden><div id="image-placeholder" class="image-placeholder"><span>▧</span><p>画像を受信しています…</p></div></div><details class="recognized"><summary>読み取った内容</summary><p id="recognized-text"></p></details></section>
+          <section class="chat-card"><div class="card-title"><span class="step-number sage">02</span><div><strong>AI講師との対話</strong><small>考え方を一つずつ整理します</small></div><span class="ai-badge"><i></i> AI講師</span></div><div id="messages" class="messages"></div><div id="answer-banner" class="answer-banner hidden">正答の確認が許可されています</div><div class="hint-control"><span>ヒント</span><div id="hint-level" class="hint-pips"></div><span id="hint-label">問題の理解</span><button id="more-hint" title="次のヒントへ">次へ ↗</button></div><div class="quick-actions"><button data-prompt="もう少しだけヒントをください。正答はまだ言わないでください。">もう少しヒント</button><button data-prompt="もっと簡単な言葉で説明してください。">簡単に説明</button><button data-prompt="身近な例を一つ見せてください。正答につながる内容は避けてください。">例を見たい</button></div><form id="chat-form" class="chat-form"><textarea id="chat-input" rows="1" placeholder="考えたことや質問を書いてください…" maxlength="4000"></textarea><button id="send-button" type="submit" aria-label="送信">↑</button></form><div class="chat-bottom"><span>AIの説明は必ず問題文と照らして確認してください。</span><button id="reveal-answer">正答を確認</button></div></section>
+        </div>
+      </section>
+    </main>
+  </div>
+  <div id="toast" class="toast" role="status"></div>
+  <script src="/static/app.js" defer></script>
+</body>
+</html>

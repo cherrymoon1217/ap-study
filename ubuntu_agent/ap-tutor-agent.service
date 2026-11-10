@@ -1,0 +1,13 @@
+[Unit]
+Description=AP Tutor screenshot auto uploader
+After=graphical-session.target
+
+[Service]
+Type=simple
+WorkingDirectory=%h/project/ap_study
+ExecStart=%h/project/ap_study/.venv/bin/python -m ubuntu_agent.main --watch
+Restart=on-failure
+RestartSec=2
+
+[Install]
+WantedBy=default.target

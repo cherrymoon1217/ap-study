@@ -1,0 +1,49 @@
+.env
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+data/*
+!data/.gitkeep
+captures/
+
+# Local AI / AWS settings
+.aws/
+.codex/
+.agents/
+
+# Python packaging
+*.egg-info/
+build/
+dist/
+
+# Editor
+.vscode/
+
+# Additional secrets
+.env.*
+!.env.sample
+.aws/
+.codex/
+.agents/
+.vscode/
+*.egg-info/
+.env.*
+!.env.sample
+.env
+.env.*
+!.env.sample
+.venv/
+.aws/
+.codex/
+.agents/
+.vscode/
+*.egg-info/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+captures/
+data/*
+!data/.gitkeep
